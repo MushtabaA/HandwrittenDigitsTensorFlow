@@ -13,8 +13,8 @@ digit_data = tf.keras.datasets.mnist
 class_names = ['Zero', 'One', 'Two', 'Three','Four','Five','Six','Seven', 'Eight', 'Nine']
 
 # shrinking the data down from 0-1 instead of up to 255 (dividing by 255 because they are grey-scale values)
-train_images = train_images/255.0
-test_images = test_images/255.0
+train_images = train_images/255
+test_images = test_images/255
 
 # creating a model (sequence of layers)
 model = keras.Sequential([
@@ -25,7 +25,7 @@ model = keras.Sequential([
 model.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"])
 
 # training the model on training data
-model.fit(train_images, train_labels, epochs=10) # epochs set to 10 to run through all the data 10 times
+model.fit(train_images, train_labels, epochs=25) # epochs set to 10 to run through all the data 10 times
 
 # saving the model to avoid training it constantly when running
 model.save("saved_model")
