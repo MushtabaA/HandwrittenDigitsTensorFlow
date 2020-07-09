@@ -19,7 +19,7 @@ test_images = test_images/255.0
 # creating a model (sequence of layers)
 model = keras.Sequential([
     keras.layers.Flatten(input_shape=(28,28)), # flattening the data to pass to the neurons (each image is 28x28 pixels)
-    keras.layers.Dense(128, activation="relu"), # hidden dense layer to pass to output layer
+    keras.layers.Dense(150, activation="relu"), # hidden dense layer to pass to output layer
     keras.layers.Dense(10, activation="softmax") # output layer of 10 neurons for numbers 0-9
 ])
 model.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"])
